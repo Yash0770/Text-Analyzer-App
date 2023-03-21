@@ -5,18 +5,22 @@ export default function TextForm(props) {
     // console.log("UperrCase is clicked"+text);
     let newText = text.toUpperCase()
     setText(newText)
+    props.showAlert("Converted to Uppercase","success")
   }
   const handleLowClick = ()=>{
     let newText = text.toLowerCase()
     setText(newText)
+    props.showAlert("Converted to Lowercase", "success")
   }
   const handleCopyClick = ()=>{
     let text = document.getElementById('myBox')
     text.select();
     navigator.clipboard.writeText(text.value)
+    props.showAlert("Copied to Clipboard", "success")
   }
   const handleClearClick = ()=>{
     setText("")
+    props.showAlert("Text Cleared!", "success")
   }
   const handleOnChange = (event)=>{
     // console.log("On Change");
