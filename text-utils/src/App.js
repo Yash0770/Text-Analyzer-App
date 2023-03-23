@@ -1,10 +1,11 @@
 // import logo from './logo.svg';
 import { useState } from 'react';
 import './App.css';
-// import About from './components/About';
+import About from './components/About';
 import Navbar from './components/Navbar';
 import Alert from './components/Alert';
 import TextForm from './components/TextForm';
+import { Route, Routes} from 'react-router-dom'
 
 // let name = "Yash"
 function App() {
@@ -71,7 +72,14 @@ function App() {
       />
       <Alert alert={alert}/>
       <div className="container my-3">
-      <TextForm showAlert={showAlert} heading = "Enter the text to analyze below" mode={mode}/>
+
+        <Routes>
+          {/* <Route path='/' element={<Navbar/>} /> */}
+          <Route exact path='/' element={
+                  <TextForm showAlert={showAlert} heading = "Enter the text to analyze below" mode={mode}/>}/>
+          <Route exact path='/about' element={<About/>} />
+
+        </Routes>
       {/* <About/> */}
       </div>
     </>
