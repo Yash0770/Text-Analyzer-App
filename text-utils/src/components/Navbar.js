@@ -26,10 +26,10 @@ export default function Navbar(props) {
           {/* Dropdown button */}
           
           <div className="dropdown mx-3">
-              <button className={`btn btn-light dropdown-toggle text-${props.mode==='light'?'dark':'light'}`} type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <button className={`btn btn-light dropdown-toggle bg-${props.mode} text-${props.mode==='light'?'dark':'light'}`} type="button" data-bs-toggle="dropdown" aria-expanded="false">
                 More themes
               </button> 
-              <ul className="dropdown-menu">
+              <ul className={`dropdown-menu bg-${props.mode} `} >
               <li><a className="dropdown-item" href="_">
               <div className={`form-check form-switch mx-1 text-${props.mode==='light'?'dark':'light'}`}>
                   <input className="form-check-input" onClick={props.toggleRedMode} type="checkbox" role="switch" id="flexSwitchCheckDefault"/>
