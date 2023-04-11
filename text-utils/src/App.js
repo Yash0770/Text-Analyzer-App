@@ -10,6 +10,7 @@ import { Route, Routes} from 'react-router-dom'
 // let name = "Yash"
 function App() {
   const [mode, setMode] = useState("light")    //Whether dark mode is enabled or not
+  const [modeModeText, setModeText] = useState('Enable dark mode')
   const [alert, setAlert] = useState(null)
 
   const showAlert = (message, type)=>{
@@ -25,11 +26,13 @@ function App() {
   const toggleMode = ()=>{
     if(mode === "light"){
       setMode("dark")
+      setModeText('Enable light mode')
       document.body.style.backgroundColor = '#0f1544'
       showAlert("Dark mode has been enabled", "success")
     }
     else{
       setMode("light")
+      setModeText('Enable dark mode')
       document.body.style.backgroundColor = 'white'
       showAlert("Light mode has been enabled", "success")
     }
@@ -66,6 +69,7 @@ function App() {
       title="TextUtils"
       aboutText ="About"
       mode = {mode}
+      modeModeText = {modeModeText}
       toggleMode = {toggleMode}
       toggleRedMode = {toggleRedMode}
       toggleGreenMode = {toggleGreenMode}
